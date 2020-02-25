@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RSSReader.ViewAddAndEditRSS"
+    x:Name="AddAndEditRSS"
+    Padding="10,0"
+    BackgroundColor="#C0808080">
+    <ContentView.Content>
+        <Frame
+            HasShadow="False"
+            BackgroundColor="White"
+            CornerRadius="5"
+            IsClippedToBounds="True">
+            <StackLayout
+                VerticalOptions="Center"
+                HorizontalOptions="FillAndExpand"
+                Padding="4"
+                Spacing="5">
+                <Entry
+                    Placeholder="Нзавание RSS ленты"
+                    PlaceholderColor="Gray"
+                    HorizontalOptions="FillAndExpand"/>
+                <Entry
+                    Placeholder="Ссылка RSS ленты"
+                    PlaceholderColor="Gray"
+                    HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

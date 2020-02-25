@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+    <PackageReference Include="Realm" Version="4.3.0" />
+    <PackageReference Include="Realm.Fody" Version="4.3.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Models\" />
+    <Folder Include="ComponentsUI\" />
+    <Folder Include="ComponentsUI\ViewRSSMenuCell\" />
+    <Folder Include="ComponentsUI\ViewAddAndEditRSS\" />
+    <Folder Include="Views\ViewMainRSS\" />
+    <Folder Include="Views\ViewDetailRSS\" />
+    <Folder Include="ViewModels\ViewModelMainRSS\" />
+    <Folder Include="Models\ModelTableRSS\" />
+    <Folder Include="Function\" />
+    <Folder Include="Styles\" />
+    <Folder Include="ViewModels\ViewModelDetailRSS\" />
+    <Folder Include="ServiceRequests\" />
+    <Folder Include="ServiceRequests\ReceivedDataEvent\" />
+    <Folder Include="Models\ModelTableDetailRSS\" />
+    <Folder Include="Convertered\" />
+    <Folder Include="Convertered\StringNullOrEmptyBoolConverter\" />
+    <Folder Include="Renderer\" />
+    <Folder Include="Renderer\CustomEntry\" />
+    <Folder Include="Views\ViewPopupAddAndEditRSS\" />
+    <Folder Include="ViewModels\ViewModelPopupAddAndEditRSS\" />
+    <Folder Include="Views\ViewPopupMenuCell\" />
+    <Folder Include="ViewModels\ViewModelPopupMenuCell\" />
+    <Folder Include="Interface\" />
+    <Folder Include="Interface\IWindowDisplayAlertService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="ComponentsUI\ViewAddAndEditRSS\ViewAddAndEditeRSS.xaml" />
+    <EmbeddedResource Remove="ComponentsUI\ViewAddAndEditRSS\ViewAddAndEditeRSS.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ComponentsUI\ViewAddAndEditRSS\ViewAddAndEditeRSS.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\ViewDetailRSS\ViewDetailRSS.xaml.cs">
+      <DependentUpon>ViewDetailRSS.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="StyleResourceDictionary\DefaultTheme.xaml.cs">
+      <DependentUpon>DefaultTheme.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Styles\DefaultTheme.xaml.cs">
+      <DependentUpon>DefaultTheme.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

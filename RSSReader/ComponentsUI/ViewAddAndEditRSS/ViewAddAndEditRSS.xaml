@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RSSReader.ViewAddAndEditRSS"
+    xmlns:custom="clr-namespace:RSSReader"
+    xmlns:local="clr-namespace:RSSReader;assembly=RSSReader"
+    x:Name="AddAndEditRSS"
+    Padding="10,0"
+    BackgroundColor="#C0808080">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <custom:StringNullOrEmptyBoolConverter
+                x:Key="StringNullOrEmptyBoolConverter"/>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Frame
+            Style="{StaticResource StyleFrame}">
+            <StackLayout
+                x:Name="ViewSL"
+                Style="{StaticResource StyleFrameStackLayout}">
+                <custom:CustomEntry
+                    Text="{Binding NameRSS, Source={x:Reference AddAndEditRSS}}"
+                    TextColor="Black"
+                    BackgroundColor="#D7CCC8"
+                    Placeholder="Нзавание RSS ленты"
+                    PlaceholderColor="Gray"
+                    HorizontalOptions="FillAndExpand"
+                    Focused="EntryUnfocused"
+                    Unfocused="EntryFocused"
+                    HeightRequest="50"
+                    CornerRadius="4"
+                    IsCurvedCornersEnabled="True"/>
+                <Label
+                    Text="{Binding TitleHelp, Source={x:Reference AddAndEditRSS}}"
+                    IsVisible="{Binding TitleHelp, Source={x:Reference AddAndEditRSS}, Converter={StaticResource StringNullOrEmptyBoolConverter}}"
+                    TextColor="Red"
+                    FontSize="12"/>
+                <custom:CustomEntry
+                    Text="{Binding URLRSS, Source={x:Reference AddAndEditRSS}}"
+                    TextColor="Black"
+                    BackgroundColor="#D7CCC8"
+                    Placeholder="Ссылка RSS ленты"
+                    PlaceholderColor="Gray"
+                    HorizontalOptions="FillAndExpand"
+                    Focused="EntryUnfocused"
+                    Unfocused="EntryFocused"
+                    HeightRequest="50"
+                    CornerRadius="4"
+                    IsCurvedCornersEnabled="True"/>
+                <Label
+                    Text="{Binding URLHelp, Source={x:Reference AddAndEditRSS}}"
+                    IsVisible="{Binding URLHelp, Source={x:Reference AddAndEditRSS}, Converter={StaticResource StringNullOrEmptyBoolConverter}}"
+                    TextColor="Red"
+                    FontSize="12"/>
+                <StackLayout
+                    Padding="0"
+                    Orientation="Horizontal"
+                    HorizontalOptions="FillAndExpand">
+                    <Button
+                        Text="{Binding ButtonTextAddOrUpdate, Source={x:Reference AddAndEditRSS}}"
+                        Style="{StaticResource StyleButton}"
+                        HorizontalOptions="StartAndExpand"
+                        Command="{Binding CommandAddOrEditRSS, Source={x:Reference AddAndEditRSS}}"/>
+                    <Button
+                        Text="Закрыть"
+                        Style="{StaticResource StyleButton}"
+                        HorizontalOptions="EndAndExpand"
+                        Command="{Binding CommandShowAndHide, Source={x:Reference AddAndEditRSS}}"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

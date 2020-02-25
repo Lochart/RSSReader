@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RSSReader.ViewRSSMenuCell"
+    x:Name="RSSMenuCell"
+    Padding="10,0"
+    BackgroundColor="#C0808080">
+    <ContentView.Content>
+        <Frame
+            Style="{StaticResource StyleFrame}"
+            HorizontalOptions="CenterAndExpand">
+            <StackLayout
+                Style="{StaticResource StyleFrameStackLayout}">
+                <Button
+                    Text="Редактировать"
+                    Style="{StaticResource StyleButton}"
+                    HorizontalOptions="FillAndExpand"
+                    Command="{Binding CommandEditRSS, Source={x:Reference RSSMenuCell}}"/>
+                <Button
+                    Text="Удалить"
+                    Style="{StaticResource StyleButton}"
+                    HorizontalOptions="FillAndExpand"
+                    Command="{Binding CommandDeleteRSS, Source={x:Reference RSSMenuCell}}"/>
+                <Button
+                    Text="Закрыть"
+                    Style="{StaticResource StyleButton}"
+                    HorizontalOptions="FillAndExpand"
+                    Command="{Binding CommandCloseRSS, Source={x:Reference RSSMenuCell}}"/>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

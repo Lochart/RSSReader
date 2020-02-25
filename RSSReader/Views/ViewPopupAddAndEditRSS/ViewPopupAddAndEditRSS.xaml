@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:local="clr-namespace:RSSReader;assembly=RSSReader"
+    x:Class="RSSReader.ViewPopupAddAndEditRSS">
+    <AbsoluteLayout>
+        <local:ViewAddAndEditRSS
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            AbsoluteLayout.LayoutFlags="All"
+            ButtonTextAddOrUpdate="{Binding TextAddOrUpdate, Mode=TwoWay}"
+            NameRSS="{Binding NewTitleRSS, Mode=TwoWay}"
+            URLRSS="{Binding NewURLRSS, Mode=TwoWay}"
+            TitleHelp="{Binding TextTitleHelp}"
+            URLHelp="{Binding TextURLHelp}"
+            CommandAddOrEditRSS="{Binding CommandAddOrEditRSS}"
+            CommandShowAndHide="{Binding CommandHideViewRSS}">
+            <local:ViewAddAndEditRSS.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding CommandHideViewRSS}"/>
+            </local:ViewAddAndEditRSS.GestureRecognizers>
+        </local:ViewAddAndEditRSS>
+    </AbsoluteLayout>
+</pages:PopupPage>
